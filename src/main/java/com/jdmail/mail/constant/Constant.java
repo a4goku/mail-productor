@@ -1,5 +1,7 @@
 package com.jdmail.mail.constant;
 
-public class Constant {
-    public static int AAA = 1;
+public final class Constant {
+    private Constant(){}
+
+    public static final String SPRING_PROFILE_DEVELOPMENT = "dev";
 }

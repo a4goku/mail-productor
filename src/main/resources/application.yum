@@ -1,0 +1,5 @@
+server:
+    context-path:/mail-producer
+    port:8001
+    session:
+        timeout:900
