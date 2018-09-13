@@ -1,4 +1,4 @@
-package com.jdmail.mailproductor;
+package com.jdmail.mail;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
