@@ -14,10 +14,10 @@ import javax.sql.DataSource;
 @Configuration
 @AutoConfigureAfter({DatasourceConfiguration.class})
 public class MybatisConfiguration extends MybatisAutoConfiguration {
-    @Resource(name = "masterDataSource")
+    @Resource(name="masterDataSource")
     private DataSource masterDataSource;
 
-    @Resource(name = "slaveDataSource")
+    @Resource(name="slaveDataSource")
     private DataSource slaveDataSource;
 
     @Bean(name = "sqlSessionFactory")
