@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdmail.mail.mapper.MailSend2Mapper">
+  <resultMap id="BaseResultMap" type="com.jdmail.mail.entity.MailSend2">
+    <id column="send_id" jdbcType="VARCHAR" property="sendId" />
+    <result column="send_to" jdbcType="VARCHAR" property="sendTo" />
+    <result column="send_mail" jdbcType="VARCHAR" property="sendMail" />
+    <result column="send_content" jdbcType="VARCHAR" property="sendContent" />
+    <result column="send_priority" jdbcType="DECIMAL" property="sendPriority" />
+    <result column="send_count" jdbcType="DECIMAL" property="sendCount" />
+    <result column="send_status" jdbcType="VARCHAR" property="sendStatus" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="version" jdbcType="DECIMAL" property="version" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    send_id, send_to, send_mail, send_content, send_priority, send_count, send_status, 
+    remark, version, update_by, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mail_send2
+    where send_id = #{sendId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mail_send2
+    where send_id = #{sendId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.jdmail.mail.entity.MailSend2">
+    insert into mail_send2 (send_id, send_to, send_mail, 
+      send_content, send_priority, send_count, 
+      send_status, remark, version, 
+      update_by, update_time)
+    values (#{sendId,jdbcType=VARCHAR}, #{sendTo,jdbcType=VARCHAR}, #{sendMail,jdbcType=VARCHAR}, 
+      #{sendContent,jdbcType=VARCHAR}, #{sendPriority,jdbcType=DECIMAL}, #{sendCount,jdbcType=DECIMAL}, 
+      #{sendStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{version,jdbcType=DECIMAL}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jdmail.mail.entity.MailSend2">
+    insert into mail_send2
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sendId != null">
+        send_id,
+      </if>
+      <if test="sendTo != null">
+        send_to,
+      </if>
+      <if test="sendMail != null">
+        send_mail,
+      </if>
+      <if test="sendContent != null">
+        send_content,
+      </if>
+      <if test="sendPriority != null">
+        send_priority,
+      </if>
+      <if test="sendCount != null">
+        send_count,
+      </if>
+      <if test="sendStatus != null">
+        send_status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sendId != null">
+        #{sendId,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTo != null">
+        #{sendTo,jdbcType=VARCHAR},
+      </if>
+      <if test="sendMail != null">
+        #{sendMail,jdbcType=VARCHAR},
+      </if>
+      <if test="sendContent != null">
+        #{sendContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendPriority != null">
+        #{sendPriority,jdbcType=DECIMAL},
+      </if>
+      <if test="sendCount != null">
+        #{sendCount,jdbcType=DECIMAL},
+      </if>
+      <if test="sendStatus != null">
+        #{sendStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=DECIMAL},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jdmail.mail.entity.MailSend2">
+    update mail_send2
+    <set>
+      <if test="sendTo != null">
+        send_to = #{sendTo,jdbcType=VARCHAR},
+      </if>
+      <if test="sendMail != null">
+        send_mail = #{sendMail,jdbcType=VARCHAR},
+      </if>
+      <if test="sendContent != null">
+        send_content = #{sendContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sendPriority != null">
+        send_priority = #{sendPriority,jdbcType=DECIMAL},
+      </if>
+      <if test="sendCount != null">
+        send_count = #{sendCount,jdbcType=DECIMAL},
+      </if>
+      <if test="sendStatus != null">
+        send_status = #{sendStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=DECIMAL},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where send_id = #{sendId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jdmail.mail.entity.MailSend2">
+    update mail_send2
+    set send_to = #{sendTo,jdbcType=VARCHAR},
+      send_mail = #{sendMail,jdbcType=VARCHAR},
+      send_content = #{sendContent,jdbcType=VARCHAR},
+      send_priority = #{sendPriority,jdbcType=DECIMAL},
+      send_count = #{sendCount,jdbcType=DECIMAL},
+      send_status = #{sendStatus,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      version = #{version,jdbcType=DECIMAL},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where send_id = #{sendId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -10,6 +10,7 @@
   <sql id="Base_Column_List">
     id, code, name, status
   </sql>
+  <!--
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -79,4 +80,5 @@
       status = #{status,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  -->
 </mapper>

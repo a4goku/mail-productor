@@ -1,8 +1,10 @@
 package com.jdmail.mail.mapper;
 
+import com.jdmail.mail.config.database.BaseMapper;
 import com.jdmail.mail.entity.MstDict;
 
-public interface MstDictMapper {
+public interface MstDictMapper extends BaseMapper<MstDict> {
+    /*
     int deleteByPrimaryKey(String id);
 
     int insert(MstDict record);
@@ -14,4 +16,5 @@ public interface MstDictMapper {
     int updateByPrimaryKeySelective(MstDict record);
 
     int updateByPrimaryKey(MstDict record);
+    */
 }
