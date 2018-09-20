@@ -20,10 +20,10 @@ spring:
       max-wait: -1
       max-active: 1000
     timeout: 6000
-#    cluster:
-#      max-redirects: 1000
-#      nodes:
-#        -192.168.1.117:7001
+    cluster:
+      max-redirects: 1000
+      nodes:
+        -127.0.0.1:6379
 
   mail:
     default-encoding: UTF-8
@@ -89,7 +89,7 @@ logging:
 
 #mapper:
 #   mappers:
-#       -com.xxx.xxx.BaseMapper
+#       com.jdmail.mail.config.database.BaseMapper
 #   not-empty: false
 #   identity: MYSQL
 

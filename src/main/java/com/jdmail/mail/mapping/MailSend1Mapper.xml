@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jdmail.mail.mapper.MailSend1Mapper">
-  <resultMap id="BaseResultMap" type="com.jdmail.mail.entity.MailSend1">
+  <resultMap id="BaseResultMap" type="com.jdmail.mail.entity.MailSend">
     <id column="send_id" jdbcType="VARCHAR" property="sendId" />
     <result column="send_to" jdbcType="VARCHAR" property="sendTo" />
     <result column="send_mail" jdbcType="VARCHAR" property="sendMail" />
@@ -28,7 +28,7 @@
     delete from mail_send1
     where send_id = #{sendId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.jdmail.mail.entity.MailSend1">
+  <insert id="insert" parameterType="com.jdmail.mail.entity.MailSend">
     insert into mail_send1 (send_id, send_to, send_mail, 
       send_content, send_priority, send_count, 
       send_status, remark, version, 
@@ -38,7 +38,7 @@
       #{sendStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{version,jdbcType=DECIMAL}, 
       #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.jdmail.mail.entity.MailSend1">
+  <insert id="insertSelective" parameterType="com.jdmail.mail.entity.MailSend">
     insert into mail_send1
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="sendId != null">
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jdmail.mail.entity.MailSend1">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jdmail.mail.entity.MailSend">
     update mail_send1
     <set>
       <if test="sendTo != null">
@@ -147,7 +147,7 @@
     </set>
     where send_id = #{sendId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jdmail.mail.entity.MailSend1">
+  <update id="updateByPrimaryKey" parameterType="com.jdmail.mail.entity.MailSend">
     update mail_send1
     set send_to = #{sendTo,jdbcType=VARCHAR},
       send_mail = #{sendMail,jdbcType=VARCHAR},
