@@ -18,6 +18,7 @@
     send_id, send_to, send_mail, send_content, send_priority, send_count, send_status, 
     remark, version, update_by, update_time
   </sql>
+  <!--
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -161,4 +162,5 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where send_id = #{sendId,jdbcType=VARCHAR}
   </update>
+  -->
 </mapper>

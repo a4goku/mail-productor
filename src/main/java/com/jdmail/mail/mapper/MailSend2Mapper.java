@@ -1,8 +1,10 @@
 package com.jdmail.mail.mapper;
 
+import com.jdmail.mail.config.database.BaseMapper;
 import com.jdmail.mail.entity.MailSend;
 
-public interface MailSend2Mapper {
+public interface MailSend2Mapper extends BaseMapper<MailSend> {
+    /*
     int deleteByPrimaryKey(String sendId);
 
     int insert(MailSend record);
@@ -14,4 +16,5 @@ public interface MailSend2Mapper {
     int updateByPrimaryKeySelective(MailSend record);
 
     int updateByPrimaryKey(MailSend record);
+    */
 }
