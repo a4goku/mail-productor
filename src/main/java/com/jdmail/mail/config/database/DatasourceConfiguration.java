@@ -24,27 +24,27 @@ public class DatasourceConfiguration {
     private static Logger LOGGER = LoggerFactory.getLogger(DatasourceConfiguration.class);
 
     @Value("${druid.type}")
-    private Class <? extends DataSource> datasourceType;
+    private Class<? extends DataSource> datasourceType;
 
     @Bean(name = "masterDataSource")
     @Primary
     @ConfigurationProperties(prefix = "druid.master")
-    public DataSource masterDataSource() throws SQLException{
+    public DataSource masterDataSource() throws SQLException {
         DataSource masterDataSource = DataSourceBuilder.create().type(datasourceType).build();
-        LOGGER.info("=========MASTER: {}=========",masterDataSource);
+        LOGGER.info("=========MASTER: {}=========", masterDataSource);
         return masterDataSource;
     }
 
     @Bean(name = "slaveDataSource")
     @ConfigurationProperties(prefix = "druid.slave")
-    public DataSource slaveDataSource() throws SQLException{
+    public DataSource slaveDataSource() throws SQLException {
         DataSource slaveDataSource = DataSourceBuilder.create().type(datasourceType).build();
-        LOGGER.info("========SLAVE: {}=========",slaveDataSource);
+        LOGGER.info("========SLAVE: {}=========", slaveDataSource);
         return slaveDataSource;
     }
 
     @Bean
-    public ServletRegistrationBean druidServlet(){
+    public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean();
         reg.setServlet(new StatViewServlet());
         reg.addUrlMappings("/druid/*");
@@ -55,7 +55,7 @@ public class DatasourceConfiguration {
     }
 
     @Bean
-    public FilterRegistrationBean filterRegistrationBean(){
+    public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");

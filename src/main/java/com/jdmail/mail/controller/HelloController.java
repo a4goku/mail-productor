@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class HelloController {
     @RequestMapping("/hello")
-    public String hello(){
+    public String hello() {
         return "Hello SpringBoot Demo! I am learning JD mail system!";
     }
 }

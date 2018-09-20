@@ -14,7 +14,7 @@ public class ReadOnlyConnectionInterceptor implements Ordered {
     public static final Logger LOGGER = LoggerFactory.getLogger(ReadOnlyConnectionInterceptor.class);
 
     @Around("@annotation(readOnlyConnection)")
-    public Object proceed(ProceedingJoinPoint proceedingJoinPointroceedingJoinPoint, ReadOnlyConnection readOnlyConnection) throws Throwable{
+    public Object proceed(ProceedingJoinPoint proceedingJoinPointroceedingJoinPoint, ReadOnlyConnection readOnlyConnection) throws Throwable {
         try {
             LOGGER.info("------------set database connection 2 read only---------------");
             DataBaseContextHolder.setDataBaseType(DataBaseContextHolder.DataBaseType.SLAVE);
@@ -28,7 +28,7 @@ public class ReadOnlyConnectionInterceptor implements Ordered {
     }
 
     @Override
-    public int getOrder(){
+    public int getOrder() {
         return 0;
     }
 }

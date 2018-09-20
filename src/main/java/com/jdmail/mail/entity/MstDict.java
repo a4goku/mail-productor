@@ -1,6 +1,6 @@
 package com.jdmail.mail.entity;
 
-public class MstDict{
+public class MstDict {
     private String id;
 
     private String code;

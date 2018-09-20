@@ -12,11 +12,11 @@ public enum MailStatus {
 
     private String code;
 
-    private MailStatus(String code){
+    private MailStatus(String code) {
         this.code = code;
     }
 
-    public String getCode(){
+    public String getCode() {
         return code;
     }
 }

@@ -5,7 +5,7 @@ import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.impl.TimeBasedGenerator;
 
 public class KeyUtil {
-    public static String generatorUUID(){
+    public static String generatorUUID() {
         TimeBasedGenerator timeBaseGenerator = Generators.timeBasedGenerator(EthernetAddress.fromInterface());
         return timeBaseGenerator.generate().toString();
     }

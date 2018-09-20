@@ -1,6 +1,6 @@
 package com.jdmail.mail.enumeration;
 
-public enum  RedisPriorityQueue {
+public enum RedisPriorityQueue {
     //7,8,9 隐藏、安全、交易
     FAST_QUEUE("fast"),
 
@@ -12,11 +12,11 @@ public enum  RedisPriorityQueue {
 
     private String code;
 
-    private RedisPriorityQueue(String code){
+    private RedisPriorityQueue(String code) {
         this.code = code;
     }
 
-    public String getCode(){
+    public String getCode() {
         return code;
     }
 }

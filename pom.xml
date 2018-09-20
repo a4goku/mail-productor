@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jdMail</groupId>
-    <artifactId>mail-productor</artifactId>
+    <artifactId>mail-producer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>mail-productor</name>
+    <name>mail-producer</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -170,7 +170,7 @@
     </dependencies>
 
     <build>
-        <finalName>mail-productor</finalName>
+        <finalName>mail-producer</finalName>
         <!-- 打包时包含properties.xml-->
         <resources>
             <resource>

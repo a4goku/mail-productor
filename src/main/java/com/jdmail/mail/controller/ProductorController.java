@@ -19,9 +19,9 @@ public class ProductorController {
     private MailSendService mailSendService;
 
     @RequestMapping(value = "/send", produces = {"application/json;charset=UTF-8"})
-    public void send(@RequestBody(required = false) MailSend mailSend) throws Exception{
+    public void send(@RequestBody(required = false) MailSend mailSend) throws Exception {
 
-        try{
+        try {
             //1数据校验
 
             //2入库
@@ -34,7 +34,7 @@ public class ProductorController {
             //3把数据放入redis
             mailSendService.sendRedis(mailSend);
 
-        } catch(Exception e){
+        } catch (Exception e) {
             LOGGER.error("异常信息：{}", e);
             throw new RuntimeException(e);
         }

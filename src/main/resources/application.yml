@@ -1,5 +1,5 @@
 server:
-  context-path: /mail-productor
+  context-path: /mail-producer
   port: 9001
   session:
     timeout: 900

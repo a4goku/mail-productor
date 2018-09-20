@@ -14,18 +14,18 @@ import javax.sql.DataSource;
 @Configuration
 @AutoConfigureAfter({DatasourceConfiguration.class})
 public class MybatisConfiguration extends MybatisAutoConfiguration {
-    @Resource(name="masterDataSource")
+    @Resource(name = "masterDataSource")
     private DataSource masterDataSource;
 
-    @Resource(name="slaveDataSource")
+    @Resource(name = "slaveDataSource")
     private DataSource slaveDataSource;
 
     @Bean(name = "sqlSessionFactory")
-    public SqlSessionFactory sqlSessionFactory() throws Exception{
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
         return super.sqlSessionFactory(roundRobinDataSouceProxy());
     }
 
-    public AbstractRoutingDataSource roundRobinDataSouceProxy(){
+    public AbstractRoutingDataSource roundRobinDataSouceProxy() {
         ReadWriteSplitRoutingDataSource proxy = new ReadWriteSplitRoutingDataSource();
         ClassLoaderRepository.SoftHashMap targetDataResources = new ClassLoaderRepository.SoftHashMap();
         targetDataResources.put(DataBaseContextHolder.DataBaseType.MASERT, masterDataSource);
